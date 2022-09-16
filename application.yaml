@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application2
+  name: myapp-argo-application1
   namespace: openshift-gitops
 spec:
   project: default
 
   source:
     repoURL: https://github.com/saaj562/argocd-app-config.git
-    targetRevision: HEAD
+    targetRevision: main
     path: dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp2
+    namespace: myapp1
 
   syncPolicy:
     syncOptions:
